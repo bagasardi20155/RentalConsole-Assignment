@@ -9,6 +9,20 @@ package rentalconsole;
  *
  * @author Predator
  */
-public class PlatinumMember {
+public class PlatinumMember extends GoldMember{
     
+    int bonus;
+    
+    PlatinumMember() {
+        rentCost = 30000;
+        point = 5;
+        disc = 2;
+        cashback = 5000;
+    }
+    
+    protected int getBonus(int rentalDuration) {
+        
+        bonus = rentalDuration * 5000;
+        return bonus;
+    }
 }
