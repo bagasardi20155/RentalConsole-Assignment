@@ -5,6 +5,10 @@
  */
 package rentalconsole;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 /**
  *
@@ -14,13 +18,11 @@ public class RentalConsole {
 
     
     public static void main(String[] args) {
-        
-        // insert data member to arrayList
+       
+        // do insert data member
         Others o = new Others();
-        o.addMember(new DataMember("M001", "Mr. X", "Silver"));
-        o.addMember(new DataMember("M002", "Mr. Y", "Gold"));
-        o.addMember(new DataMember("M003", "Mr. Z", "Platinum"));
-      
+        o.insertMember();
+        
         
         // attribute
         String idMember, dateRent, monthRent, yearRent, dateReturn, monthReturn, yearReturn;
@@ -51,14 +53,9 @@ public class RentalConsole {
         System.out.print("| Masukkan Tahun Kembali           | : ");
         yearReturn = input.nextLine();
         
-    }
-    
-    static private void showData(String idMember) {
-
-        System.out.println("+ -------------------------------------------------------------------------------------------- +");
-        System.out.println(idMember);
-
-        Others o = new Others();
+        
+        // do search data member
+        System.out.println("\n+ -------------------------------------------------------------------------------------------- +");
         o.searchMember(idMember);
     }
 }

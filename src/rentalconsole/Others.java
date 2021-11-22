@@ -6,55 +6,63 @@
 package rentalconsole;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 /**
  *
  * @author Predator
  */
 public class Others {
     
-    ArrayList<DataMember> dataMember = new ArrayList<DataMember>();
+    Map<String, List<String>> dataMember = new HashMap<String, List<String>>();
     
-    // add member to arrayList
-    void addMember(DataMember data) {
-        this.dataMember.add(data);
+    // insert data member values paired with id member key hashmap
+    void insertMember() {
+        
+        // insert M001 to value list
+        List<String> valueOne = new ArrayList<String>();
+        valueOne.add("Mr. X");
+        valueOne.add("Silver");
+        
+        // insert M002 to value list
+        List<String> valueTwo = new ArrayList<String>();
+        valueTwo.add("Mr. Y");
+        valueTwo.add("Gold");
+        
+        // insert M003 to value list
+        List<String> valueThree = new ArrayList<String>();
+        valueThree.add("Mr. Z");
+        valueThree.add("Platinum");
+        
+        // insert all values paired to key
+        this.dataMember.put("M001", valueOne);
+        this.dataMember.put("M002", valueTwo);
+        this.dataMember.put("M003", valueThree);
     }
+    
     
     // search data on arrayList
     void searchMember(String idMember) {       
-        boolean found = false;
-        int index = -1;
-        
-        for(int i = 0; i < this.dataMember.size(); i++) {
-            if(this.dataMember.get(i).idMember == idMember) {
-                index = i;
-                found = true;
-            }
-        }
-        
-        if(found == true) {
-            this.dataMember.get(index).print();
+         
+        if(dataMember.containsKey(idMember)) {
             
+            for(Map.Entry<String, List<String>> entry : dataMember.entrySet()) {
+                if(entry.getKey().equals(idMember)) {
+                    
+                String key = entry.getKey();
+                List<String> values = entry.getValue();
+                
+                System.out.println("\n| ID Member                        | : " + key);
+                System.out.println("| Nama Member                      | : " + values.get(0));
+                System.out.println("| Jenis Member                     | : " + values.get(1));
+                
+                }
+            }
         } else {
-            System.out.println("Belum terdaftar sebagai member");
+                System.out.println("Belum terdaftar sebagai member");
         }
     }
     
-    void showMember() {
-        boolean found = false;
-        int index = 0;
-        
-        for(int i = 0; i < this.dataMember.size(); i++) {
-            if(this.dataMember.get(i).idMember == "M001") {
-                index = i;
-                found = true;
-            }
-        }
-        
-        if(found == true) {
-            this.dataMember.get(index).print();
-            
-        } else {
-            System.out.println("Belum terdaftar sebagai member");
-        }
-    }
+    
 }
