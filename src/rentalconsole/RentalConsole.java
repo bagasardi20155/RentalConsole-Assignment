@@ -68,7 +68,7 @@ public class RentalConsole extends Others{
         // show rent date and return date
         System.out.println("\n+ -------------------------------------------------------------------------------------------- +");
         System.out.println("\n| Tanggal Pinjam                   | : " + dateRent + " - " + monthRent + " - " + yearRent);
-        System.out.println("| Tanggal Pinjam                   | : " + dateReturn + " - " + monthReturn + " - " + yearReturn);
+        System.out.println("| Tanggal Kembali                  | : " + dateReturn + " - " + monthReturn + " - " + yearReturn);
         
         
         // show rent duration
