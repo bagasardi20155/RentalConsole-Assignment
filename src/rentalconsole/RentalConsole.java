@@ -85,13 +85,16 @@ public class RentalConsole extends Others{
         } else if(jenisMember == "Gold") {
             System.out.println("\n| Total Sewa                       | : Rp. " + gm.costAmount(rentalDuration));
             System.out.println("| Jumlah Poin                      | : " + gm.getPoint(rentalDuration));
-            System.out.println("| Jumlah Cashback                  | : " + gm.cashback);
+            System.out.println("| Jumlah Cashback              | : Rp. " + gm.cashback);
             
-        } else {
+        } else if(jenisMember == "Platinum") {
             System.out.println("\n| Total Sewa                       | : Rp. " + pm.costAmount(rentalDuration));
             System.out.println("| Jumlah Poin                      | : " + pm.getPoint(rentalDuration));
-            System.out.println("| Jumlah Cashback                  | : " + pm.cashback);
-            System.out.println("| Bonus Pulsa                      | : " + pm.getBonus(rentalDuration));
+            System.out.println("| Jumlah Cashback              | : Rp. " + pm.cashback);
+            System.out.println("| Bonus Pulsa                  | : Rp. " + pm.getBonus(rentalDuration));
+            
+        } else {
+            System.out.println("");
         }
     }
 }
