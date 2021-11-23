@@ -14,10 +14,10 @@ public class PlatinumMember extends GoldMember{
     int bonus;
     
     PlatinumMember() {
-        rentCost = 30000;
-        point = 5;
-        disc = 2;
-        cashback = 5000;
+        rentCost = 45000;
+        point = 10;
+        disc = 3;
+        cashback = 10000;
     }
     
     protected int getBonus(int rentalDuration) {
